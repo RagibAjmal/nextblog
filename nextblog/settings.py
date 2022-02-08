@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-vqp1n34&#q*g%e6a!_(%!8zypf9$4l**$t#b)*jh9hp!)f5y_i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['infinite-eyrie-81096.herokuapp.com']
+ALLOWED_HOSTS = ['infinite-eyrie-81096.herokuapp.com','localhost']
 
 
 # Application definition
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'nextblog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['auth/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
