@@ -67,7 +67,7 @@ REST_FRAMEWORK = {
 }
 
 CORS_ORIGIN_WHITELIST = (
-    'http://localhost:3000',
+    'http://localhost:3000', 'https://nextjs-blog-six-nu-49.vercel.app'
 )
 
 ROOT_URLCONF = 'nextblog.urls'
