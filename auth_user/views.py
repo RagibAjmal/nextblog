@@ -4,19 +4,3 @@ from django.contrib.auth import authenticate, login as auth_login, logout as aut
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
-@login_required(login_url='/login/')
-def views(request):
-    return HttpResponse('user')
-
-def login(request):
-    user = authenticate(username='ragibajmal', password='sample111')
-    if user is not None:  
-        auth_login(request, user)  
-        return HttpResponse('Logged in ',user)
-    else:   
-        return HttpResponse('Login failed')
-
-def logout(request):
-    auth_logout(request)  
-    return HttpResponse('Logout sucessfully')  
-        

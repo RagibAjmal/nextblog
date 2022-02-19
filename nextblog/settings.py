@@ -60,14 +60,14 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework_simplejwt.authentication.JWTTokenUserAuthentication',
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.BasicAuthentication',
     ),
 }
 
 CORS_ORIGIN_WHITELIST = (
-    'http://localhost:3000', 'https://nextjs-blog-six-nu-49.vercel.app'
+    'http://localhost:3000', 'https://nextjs-blog-six-nu-49.vercel.app', 'https://web.postman.co',
 )
 
 ROOT_URLCONF = 'nextblog.urls'
