@@ -19,7 +19,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView, token_verify
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('auth', include('auth_user.urls')),
+    path('auth/', include('auth_user.urls')),
     path('api/token-auth/', TokenObtainPairView.as_view()),
     path('milk/', include('milk.urls')),
 ]
