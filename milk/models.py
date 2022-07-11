@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from auth_user.models import CustomUser
 import calendar
 
 obj = calendar.Calendar()
@@ -19,7 +19,7 @@ days_Dec = dict()
 
 class year2022(models.Model):
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
 
     for day in obj.itermonthdays(2022, 1):
         if day != 0:

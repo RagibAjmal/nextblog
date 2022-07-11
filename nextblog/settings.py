@@ -40,8 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'auth_user',
     'milk',
+    'auth_user',
 ]
 
 MIDDLEWARE = [
@@ -67,15 +67,16 @@ REST_FRAMEWORK = {
 }
 
 CORS_ORIGIN_WHITELIST = (
-    'http://localhost:3000', 'https://nextjs-blog-six-nu-49.vercel.app', 'https://web.postman.co',
+    'http://localhost:3000', 'https://nextjs-blog-six-nu-49.vercel.app'
 )
+
 
 ROOT_URLCONF = 'nextblog.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [''],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -101,7 +102,8 @@ DATABASES = {
     }
 }
 
-CSRF_TRUSTED_ORIGINS = ['https://infinite-eyrie-81096.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = [
+    'https://infinite-eyrie-81096.herokuapp.com', 'http://localhost:3000']
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -120,6 +122,8 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+AUTH_USER_MODEL = 'auth_user.CustomUser'
 
 
 # Internationalization
@@ -155,3 +159,13 @@ STATICFILES_DIRS = (
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# EmailProject/settings.py
+
+# Bottom of the file
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'aruvadaiorganicstore@gmail.com'
+EMAIL_HOST_PASSWORD = 'hmxkhldjyzjxlwvo'
