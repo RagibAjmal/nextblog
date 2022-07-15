@@ -14,6 +14,7 @@ from rest_framework.views import APIView
 from rest_framework import permissions
 import requests
 from rest_framework_simplejwt.tokens import RefreshToken
+from decouple import config
 # Create your views here.
 
 
@@ -49,7 +50,7 @@ class signup(APIView):
         message2 = render_to_string('email_confirmation.html', {
 
             'name': user.first_name,
-            'domain': "localhost:3000",
+            'domain': config('DOMAIN'),
             'uid': urlsafe_base64_encode(force_bytes(user.pk)),
             'token': generate_token.make_token(user)
         })
@@ -160,7 +161,7 @@ class forgotPassword(APIView):
         message2 = render_to_string('forgotPassword.html', {
 
             'name': user_object.first_name,
-            'domain': "localhost:3000",
+            'domain': config('DOMAIN'),
             'uid': urlsafe_base64_encode(force_bytes(user_object.pk)),
             'token': generate_token.make_token(user_object)
         })
