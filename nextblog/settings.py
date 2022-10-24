@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'milk',
     'auth_user',
     'items',
-    'cart',
 ]
 
 MIDDLEWARE = [
