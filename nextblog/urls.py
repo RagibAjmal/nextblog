@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
-    path('', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('auth/', include('auth_user.urls')),
     path('api/token-auth/', TokenObtainPairView.as_view()),
     path('api/token-ref-auth/', TokenRefreshView.as_view()),
