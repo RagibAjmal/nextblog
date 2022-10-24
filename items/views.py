@@ -49,8 +49,8 @@ class cart_add(APIView):
             cart = Cart.objects.create(user=user)
 
         item = Item.objects.get(id=id)
-
-        cart.cart[id] = 1
+        if str(id) not in cart.cart:
+            cart.cart[id] = 1
         cart.save()
         return JsonResponse({"success": True}, safe=False)
 
